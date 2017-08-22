@@ -1,0 +1,132 @@
+-----> Starting Kitchen (v1.17.0)
+-----> Cleaning up any prior instances of <default-centos73-min-community>
+-----> Destroying <default-centos73-min-community>...
+       Finished destroying <default-centos73-min-community> (0m0.00s).
+-----> Testing <default-centos73-min-community>
+-----> Creating <default-centos73-min-community>...
+       /opt/vagrant/embedded/gems/gems/vagrant-1.9.5/lib/vagrant/util/platform.rb:25: warning: Insecure world writable dir /opt/apache/maven/bin in PATH, mode 040777
+       Bringing machine 'default' up with 'virtualbox' provider...
+       ==> default: Importing base box 'centos73-min.box'...
+       [KProgress: 10%[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+       ==> default: Setting the name of the VM: kitchen-task1_community-default-centos73-min-community_default_1503333189773_85158
+       ==> default: Fixed port collision for 22 => 2222. Now on port 2201.
+       ==> default: Clearing any previously set network interfaces...
+       ==> default: Preparing network interfaces based on configuration...
+           default: Adapter 1: nat
+           default: Adapter 2: hostonly
+       ==> default: Forwarding ports...
+           default: 22 (guest) => 2201 (host) (adapter 1)
+       ==> default: Booting VM...
+       ==> default: Waiting for machine to boot. This may take a few minutes...
+           default: SSH address: 127.0.0.1:2201
+           default: SSH username: vagrant
+           default: SSH auth method: private key
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: 
+           default: Vagrant insecure key detected. Vagrant will automatically replace
+           default: this with a newly generated keypair for better security.
+           default: 
+           default: Inserting generated public key within guest...
+           default: Removing insecure key from the guest if it's present...
+           default: Key inserted! Disconnecting and reconnecting using new SSH key...
+       ==> default: Machine booted and ready!
+       ==> default: Checking for guest additions in VM...
+       ==> default: Setting hostname...
+       ==> default: Configuring and enabling network interfaces...
+           default: SSH address: 127.0.0.1:2201
+           default: SSH username: vagrant
+           default: SSH auth method: private key
+       ==> default: Machine not provisioned because `--no-provision` is specified.
+       [SSH] Established
+       Vagrant instance <default-centos73-min-community> created.
+       Finished creating <default-centos73-min-community> (1m11.38s).
+-----> Converging <default-centos73-min-community>...
+       Preparing files for transfer
+       Preparing dna.json
+       Resolving cookbook dependencies with Berkshelf 6.3.0...
+       Removing non-cookbook files before transfer
+       Preparing validation.pem
+       Preparing client.rb
+-----> Installing Chef Omnibus (install only if missing)
+       Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+       Trying wget...
+       Download complete.
+       el 7 x86_64
+       Getting information for chef stable  for el...
+       downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=7&m=x86_64
+         to file /tmp/install.sh.12007/metadata.txt
+       trying wget...
+       sha1	d3d26412b6304c92f72749d00e62e0191ceada05
+       sha256	fe051b504856a74ccce1fd23ff92c296506cb8292a3933c71069ae915e7a4a00
+       url	https://packages.chef.io/files/stable/chef/13.3.42/el/7/chef-13.3.42-1.el7.x86_64.rpm
+       version	13.3.42
+       downloaded metadata file looks valid...
+       downloading https://packages.chef.io/files/stable/chef/13.3.42/el/7/chef-13.3.42-1.el7.x86_64.rpm
+         to file /tmp/install.sh.12007/chef-13.3.42-1.el7.x86_64.rpm
+       trying wget...
+       Comparing checksum with sha256sum...
+       
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+       
+       You are installing an omnibus package without a version pin.  If you are installing
+       on production servers via an automated process this is DANGEROUS and you will
+       be upgraded without warning on new releases, even to new major releases.
+       Letting the version float is only appropriate in desktop, test, development or
+       CI/CD environments.
+       
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+       
+       Installing chef 
+       installing with rpm...
+       warning: /tmp/install.sh.12007/chef-13.3.42-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+       Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+       Updating / installing...
+          1:chef-13.3.42-1.el7                                                 (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 52%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]
+       Thank you for installing Chef!
+       Transferring files to <default-centos73-min-community>
+       Starting Chef Client, version 13.3.42
+       Creating a new client identity for default-centos73-min-community using the validator key.
+       resolving cookbooks for run list: ["task1_community::default"]
+       Synchronizing Cookbooks:
+         - task1_community (0.1.0)
+         - netstat (0.2.0)
+       Installing Cookbook Gems:
+       Compiling Cookbooks...
+       Converging 1 resources
+       Recipe: netstat::default
+         * yum_package[net-tools] action install
+           - install version 2.0-0.17.20131004git.el7 of package net-tools
+       
+       Running handlers:
+       Running handlers complete
+       Chef Client finished, 1/1 resources updated in 31 seconds
+       Finished converging <default-centos73-min-community> (1m15.61s).
+-----> Setting up <default-centos73-min-community>...
+       Finished setting up <default-centos73-min-community> (0m0.00s).
+-----> Verifying <default-centos73-min-community>...
+       Loaded tests from test/smoke/default 
+
+Profile: tests from test/smoke/default
+Version: (not specified)
+Target:  ssh://vagrant@127.0.0.1:2201
+
+
+  User root
+[38;5;247m     ↺  [0m
+  System Package
+[38;5;41m     ✔  net-tools should be installed[0m
+  Bash command
+[38;5;41m     ✔  netstat -nltp stdout should match /tcp/[0m
+[38;5;41m     ✔  netstat -nltp exit_status should eq 0[0m
+
+Test Summary: [38;5;41m3 successful[0m, [38;5;9m0 failures[0m, [38;5;247m1 skipped[0m
+       Finished verifying <default-centos73-min-community> (0m2.79s).
+-----> Destroying <default-centos73-min-community>...
+       /opt/vagrant/embedded/gems/gems/vagrant-1.9.5/lib/vagrant/util/platform.rb:25: warning: Insecure world writable dir /opt/apache/maven/bin in PATH, mode 040777
+       ==> default: Forcing shutdown of VM...
+       ==> default: Destroying VM and associated drives...
+       Vagrant instance <default-centos73-min-community> destroyed.
+       Finished destroying <default-centos73-min-community> (0m5.43s).
+       Finished testing <default-centos73-min-community> (2m35.24s).
+-----> Kitchen is finished. (2m36.86s)
