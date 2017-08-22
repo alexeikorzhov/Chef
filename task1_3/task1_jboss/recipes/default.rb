@@ -17,8 +17,22 @@
 # limitations under the License.
 #
 
-package 'java-1.8.0-openjdk-devel'
+#package 'java-1.8.0-openjdk-devel'
+include_recipe 'java'
 package 'unzip'
+
+user 'jboss' do
+  comment 'A new user for jboss'
+  shell '/sbin/nologin'
+  system true
+  action [:create, :lock]
+end
+
+group 'jboss_g' do
+  action :create
+  members 'jboss'
+  append true
+end
 
 bash "Installation Jboss/WildFly" do
   code <<-SHELL
@@ -29,10 +43,6 @@ bash "Installation Jboss/WildFly" do
   rm -rf /opt/wildfly-10.1.0.Final
   sed -i 's;127.0.0.1;192.168.56.12;g' /opt/wildfly/standalone/configuration/standalone.xml
   SHELL
-end
-
-template '/opt/wildfly/standalone/deployments/helloworld.war' do
-  source 'helloworld.war'
 end
 
 template "/etc/systemd/system/wildfly.service" do
@@ -50,10 +60,3 @@ bash 'deploy' do
   sleep 60
   SHELL
 end
-
-
-
-
-
-
-

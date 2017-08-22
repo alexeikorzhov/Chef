@@ -22,7 +22,10 @@ suites:
   - name: default
     run_list:
       - recipe[task1_jboss::default]
+      - recipe[task1_jboss::deploy]
     verifier:
       inspec_tests:
         - test/smoke/default
     attributes:
+      java:
+        jdk_version: "8"

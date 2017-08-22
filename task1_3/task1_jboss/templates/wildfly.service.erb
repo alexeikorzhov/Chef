@@ -3,6 +3,8 @@ Description=WildFly 10.1.0.Final
 After=network.target
 
 [Service]
+User=jboss
+Group=jboss_g
 Type=simple
 ExecStart=/opt/wildfly/bin/standalone.sh
 

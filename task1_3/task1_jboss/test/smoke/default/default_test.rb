@@ -35,10 +35,10 @@ describe file('/etc/systemd/system/wildfly.service') do
 end
 
 describe service('wildfly') do
-    it { should be_enabled }
-    it { should be_running }
+  it { should be_enabled }
+  it { should be_running }
 end
 
-describe http('http://192.168.56.12:8080/helloworld/HelloWorld') do
+describe http('http://192.168.56.12:8080/helloworld/hi.jsp') do
   its('status') { should eq 200 }
 end
